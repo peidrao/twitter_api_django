@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  database_twitter:
+    image: postgres
+    container_name: database_twitter
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgress/data
+    environment:
+      - POSTGRES_DB=twitter_db
+      - POSTGRES_USER=twitter_user
+      - POSTGRES_PASSWORD=twitter_password
+volumes:
+  pgdata:
